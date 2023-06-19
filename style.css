@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    background: url(pink.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+header{
+    position: fixed;
+    height: 12vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: pink;
+    box-shadow: 0 5px 10px grey;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .logo{
+    font-weight:bolder;
+    font-size: 30px;
+    color: grey;
+}
+
+.logo{
+    display:flex;
+    height: 100%;
+    width: 5%;
+    margin:0px 15px;
+}
+
+.pic{
+    height: 55px;
+
+}
+
+.fs{
+    position:relative;
+    font-weight: bold;
+    margin-left:5px;
+    margin-top: 10px;
+}
+header .navbar ul{
+list-style: none;
+}
+
+header .navbar ul li{
+    position: relative;
+    float: left;
+
+}
+.navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: grey;
+    display: block;
+    
+}
+.navbar ul li a:hover{
+    background: grey;
+    color: pink;
+}
+.navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: pink;
+    display: none;
+}
+.navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid grey;
+}
+.navbar ul li ul li ul{
+    left: 50px;
+    top: 0;
+}
+.navbar ul li:focus-within >ul,
+.navbar ul li:hover > ul{
+    display: initial;
+}
+
+header label{
+    font-size: 20px;
+    color: grey;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-bar{
+    display: none;
+}
+
+
+@media(max-width:991px){
+    header{
+        padding: 20px;
+    }
+    header label{
+        display: initial;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;right: 0;
+        background: pink;
+        border-top: 1px solid grey;
+        display: none;
+    }
+    .navbar ul li{
+        width: 100%;
+    }
+    .navbar ul li ul{
+        position: relative;
+        width: 100%;
+        height: 5vh;
+    }
+    .navbar ul li ul li{
+        background:pink;
+    }
+    .navbar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+    #menu-bar:checked~.navbar{
+        display: initial;
+    }
+
+}
